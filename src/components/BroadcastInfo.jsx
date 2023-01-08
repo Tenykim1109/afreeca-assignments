@@ -1,5 +1,6 @@
 import React from "react";
 import PeopleIcon from "@mui/icons-material/People";
+import { Tooltip } from "@mui/material";
 import { StBJThumbnail } from "../style";
 
 const BroadcastInfo = ({
@@ -35,9 +36,13 @@ const BroadcastInfo = ({
           rel="noreferrer"
           style={{ textDecorationLine: "none", color: "black" }}
         >
-          {broadTitle.length > 35
-            ? broadTitle.substring(0, 35) + "..."
-            : broadTitle}
+          {broadTitle.length > 35 ? (
+            <Tooltip title={broadTitle}>
+              <span>{broadTitle.substring(0, 35) + "..."}</span>
+            </Tooltip>
+          ) : (
+            <span>{broadTitle}</span>
+          )}
         </a>
       </h3>
       <div
