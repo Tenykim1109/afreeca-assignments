@@ -20,7 +20,6 @@ const Thumbnail = ({
     <Box
       className="bd_tb_box"
       sx={{
-        border: 1,
         borderRadius: 4,
         minWidth: 231,
         minHeight: 130,

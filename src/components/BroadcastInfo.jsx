@@ -21,11 +21,19 @@ const BroadcastInfo = ({
       >
         <img src={profileImage} alt="BJ" style={{ objectFit: "cover" }} />
       </StBJThumbnail>
-      <h3 style={{ display: "flex", marginLeft: "50px", fontSize: "14px" }}>
+      <h3
+        style={{
+          display: "flex",
+          fontSize: "14px",
+          padding: 0,
+          margin: "0px 0px 0px 50px",
+        }}
+      >
         <a
           href={`https://play.afreecatv.com/${userId}/${broadNo}`}
           target="_blank"
           rel="noreferrer"
+          style={{ textDecorationLine: "none", color: "black" }}
         >
           {broadTitle.length > 35
             ? broadTitle.substring(0, 35) + "..."
@@ -39,10 +47,11 @@ const BroadcastInfo = ({
           href={`https://bj.afreecatv.com/${userId}`}
           target="_blank"
           rel="noreferrer"
+          style={{ textDecorationLine: "none", fontSize: "14px" }}
         >
           <span>{userNick}</span>
         </a>
-        <PeopleIcon />
+        <PeopleIcon className="margin" />
         <span>{totalViewCnt.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</span>
       </div>
     </div>

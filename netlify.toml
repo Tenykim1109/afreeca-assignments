@@ -1,0 +1,6 @@
+[[redirects]]
+  from = "/proxy/*"
+  to = "https://openapi.afreecatv.com/:splat"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
