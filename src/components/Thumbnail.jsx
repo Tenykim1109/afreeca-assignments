@@ -27,8 +27,8 @@ const Thumbnail = ({
         margin: 0,
         padding: 0,
       }}
-      onMouseOver={() => setMouseOver((prev) => !prev)}
-      onMouseLeave={() => setMouseOver((prev) => !prev)}
+      onMouseOver={() => setMouseOver(true)}
+      onMouseLeave={() => setMouseOver(false)}
     >
       <StThumbnailBox>
         <StThumbnailHref

@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+# 2023 아프리카TV 신입/경력 채용 사전과제
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 1. 배포 링크
 
-## Available Scripts
+<https://afreeca-assignments.netlify.app>
 
-In the project directory, you can run:
+## 2. 사용 기술
 
-### `yarn start`
+- React
+- axios
+- Material-UI
+- Emotion
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<br />
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 3. 디렉토리 구조
 
-### `yarn test`
+```shell
+src
+   ├── App.css
+   ├── App.js # entrypoint
+   ├── App.test.js
+   ├── components
+   │   ├── BroadcastHeader.jsx
+   │   ├── BroadcastInfo.jsx
+   │   ├── BroadcastItem.jsx
+   │   └── Thumbnail.jsx
+   ├── enums
+   │   └── index.js
+   ├── index.css
+   ├── index.js
+   ├── pages
+   │   └── main
+   │       └── index.jsx
+   ├── reportWebVitals.js
+   ├── setupTests.js
+   ├── style
+   │   └── index.jsx
+   └── utils
+       └── api.js
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<br />
 
-### `yarn build`
+## 4. 구현 기능
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- 방송 리스트 출력
+- 최신순, 시청자순 정렬 기능
+- 리스트 새로고침 기능
+- 방송 썸네일 마우스 오버시 방송 시작시간 및 탐방가능 여부 출력
+- 방송 썸네일 클릭시 플레이어 화면 새창 열기
+- BJ 썸네일 및 닉네임 클릭시 BJ 정보 페이지 새창 열기
+- 35자 이상의 방송 제목은 마우스 오버시 툴팁 출력
+- 시청 유저 수 출력
+- 페이징 기능
