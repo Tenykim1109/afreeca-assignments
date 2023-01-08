@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Box,
   FormControl,
@@ -10,9 +10,15 @@ import {
 } from "@mui/material";
 import ReplayIcon from "@mui/icons-material/Replay";
 import { SORT_STATUS, SORT_STATUS_MAP } from "../enums";
+import { API } from "../utils/api";
 
-const BroadcastHeader = () => {
-  const [sortKey, setSortKey] = useState(SORT_STATUS.BROAD_START);
+const BroadcastHeader = ({
+  sortKey,
+  setSortKey,
+  pageCnt,
+  setBroadcastList,
+  setTotalCnt,
+}) => {
   return (
     <Box
       display="flex"
@@ -41,7 +47,17 @@ const BroadcastHeader = () => {
             </MenuItem>
           </Select>
         </FormControl>
-        <IconButton aria-label="replay">
+        <IconButton
+          aria-label="replay"
+          onClick={async () => {
+            const { data } = await API.get(
+              `/broad/list?client_id=${process.env.REACT_APP_CLIENT_ID}&order_type=${sortKey}&page_no=${pageCnt}`
+            );
+
+            setBroadcastList(data.broad);
+            setTotalCnt(Math.ceil(data.total_cnt / 60));
+          }}
+        >
           <ReplayIcon className="margin" />
         </IconButton>
       </Box>

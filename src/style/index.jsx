@@ -14,6 +14,21 @@ export const StBroadcastItem = styled.li`
 
 export const StThumbnailBox = styled.div`
   position: relative;
+  margin: 0;
+  padding: 0;
+  border: 0;
+`;
+
+export const StThumbnailHref = styled.a`
+  display: block;
+  position: relative;
+  overflow: hidden;
+  background: #f3f3f3;
+  padding-bottom: calc(100% / 16 * 9);
+  border-radius: 16px;
+  font: 0/0 a;
+  margin: 0;
+  padding: 0;
 `;
 
 export const StBroadcastAllow = styled.span`
@@ -29,7 +44,7 @@ export const StBroadcastAllow = styled.span`
   color: #00ddff;
   font-size: 12px;
   line-height: 22px;
-  opacity: ${(props) => (props.mouseOver ? 1 : 0)};
+  opacity: ${(props) => (props.mouseOver ? props.visitBroadType : 0)};
   transition: opacity 0.2s;
 `;
 

@@ -2,32 +2,48 @@ import React from "react";
 import PeopleIcon from "@mui/icons-material/People";
 import { StBJThumbnail } from "../style";
 
-const BroadcastInfo = () => {
+const BroadcastInfo = ({
+  profileImage,
+  userId,
+  broadTitle,
+  broadNo,
+  userNick,
+  totalViewCnt,
+}) => {
   return (
     <div
       style={{ position: "relative", minHeight: "107px", marginTop: "12px" }}
     >
       <StBJThumbnail
-        href="https://afreecatv.com"
+        href={`https://bj.afreecatv.com/${userId}`}
         target="_blank"
         rel="noreferrer"
       >
-        <img src="" alt="BJ" style={{ objectFit: "cover" }} />
+        <img src={profileImage} alt="BJ" style={{ objectFit: "cover" }} />
       </StBJThumbnail>
-      {/* <Avatar sx={{ width: 40, height: 40 }} /> */}
       <h3 style={{ display: "flex", marginLeft: "50px", fontSize: "14px" }}>
-        <a href="https://afreecatv.com" target="_blank" rel="noreferrer">
-          안녕하세요
+        <a
+          href={`https://play.afreecatv.com/${userId}/${broadNo}`}
+          target="_blank"
+          rel="noreferrer"
+        >
+          {broadTitle.length > 35
+            ? broadTitle.substring(0, 35) + "..."
+            : broadTitle}
         </a>
       </h3>
       <div
         style={{ display: "flex", marginLeft: "50px", alignItems: "center" }}
       >
-        <a href="https://afreecatv.com" target="_blank" rel="noreferrer">
-          <span>안녕하세요</span>
+        <a
+          href={`https://bj.afreecatv.com/${userId}`}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <span>{userNick}</span>
         </a>
         <PeopleIcon />
-        <span>99,999</span>
+        <span>{totalViewCnt.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</span>
       </div>
     </div>
   );

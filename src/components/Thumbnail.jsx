@@ -1,8 +1,19 @@
 import React, { useState } from "react";
 import { Box } from "@mui/material";
-import { StBJThumbnail, StBroadcastAllow, StStartTime } from "../style";
+import {
+  StThumbnailBox,
+  StBroadcastAllow,
+  StStartTime,
+  StThumbnailHref,
+} from "../style";
 
-const Thumbnail = () => {
+const Thumbnail = ({
+  userId,
+  broadNo,
+  broadThumb,
+  visitBroadType,
+  broadStart,
+}) => {
   const [mouseOver, setMouseOver] = useState(false);
 
   return (
@@ -13,8 +24,6 @@ const Thumbnail = () => {
         borderRadius: 4,
         minWidth: 231,
         minHeight: 130,
-        // maxWidth: 306,
-        // maxHeight: 172,
         position: "relative",
         margin: 0,
         padding: 0,
@@ -22,15 +31,21 @@ const Thumbnail = () => {
       onMouseOver={() => setMouseOver((prev) => !prev)}
       onMouseLeave={() => setMouseOver((prev) => !prev)}
     >
-      <StBJThumbnail
-        href="https://afreecatv.com"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <img src="" loading="lazy" />
-      </StBJThumbnail>
-      <StBroadcastAllow mouseOver={mouseOver}>탐방하기</StBroadcastAllow>
-      <StStartTime mouseOver={mouseOver}>방송시작</StStartTime>
+      <StThumbnailBox>
+        <StThumbnailHref
+          href={`https://play.afreecatv.com/${userId}/${broadNo}`}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src={broadThumb} alt="" loading="lazy" />
+        </StThumbnailHref>
+      </StThumbnailBox>
+      <StBroadcastAllow mouseOver={mouseOver} visitBroadType={visitBroadType}>
+        탐방하기
+      </StBroadcastAllow>
+      <StStartTime
+        mouseOver={mouseOver}
+      >{`${broadStart} 방송시작`}</StStartTime>
     </Box>
   );
 };
